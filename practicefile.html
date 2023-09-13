@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Different JavaScript Files</title>
+</head>
+<body>
+    <button id="load-button">Load JavaScript</button>
+    <div id="script-container"></div>
+
+    <script>
+        
+        const loadButton = document.getElementById("load-button");
+const scriptContainer = document.getElementById("script-container");
+
+// Function to load a JavaScript file dynamically
+function loadScript(filename) {
+    const script = document.createElement("script");
+    script.src = filename;
+    script.async = true;
+
+    // Remove any existing scripts from the script container
+    while (scriptContainer.firstChild) {
+        scriptContainer.removeChild(scriptContainer.firstChild);
+    }
+
+    // Append the new script to the script container
+    scriptContainer.appendChild(script);
+}
+
+// Event listener to load different JavaScript files when the button is clicked
+loadButton.addEventListener("click", function () {
+    // Replace 'script1.js' and 'script2.js' with the filenames of your JavaScript files.
+    // You can conditionally load different files based on your logic.
+    loadScript("script2.js"); // Load the second script
+});
+
+
+    </script>
+</body>
+</html>

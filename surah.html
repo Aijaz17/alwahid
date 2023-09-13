@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Wahid/Surah</title>
+    <link rel="shortcut icon" href="./img/al_wahid-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="./icons/all.min.css">
+    <link rel="stylesheet" href="./icons/fontawesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+
+
+    <script id="dynamicScript" src="data.js"></script>
+    <script>
+        function loaddata() {
+            var quran = data;
+            var str = JSON.stringify(quran);
+            var obj = JSON.parse(str);
+            for (var verse in obj) {
+                var a = document.createElement("a");
+                a.innerHTML = obj[verse].name;
+                a.href = "surah.html?id=" + obj[verse].id;
+                document.getElementById("div").appendChild(a);
+                var br = document.createElement("br");
+                document.getElementById("div").appendChild(br);
+
+            }
+        }
+    </script>
+
+
+    <style>
+        body.night {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .fa-moon.moonactive {
+            color: rgb(5, 2, 2);
+        }
+    </style>
+    <!-- <script id="dynamicScript" src="data.js"></script> -->
+    <script>
+        function show() {
+
+            var url = window.location.href;
+            var inde = url.indexOf("=");
+            var sub = url.substring(inde + 1);
+
+            var quran = data;
+            var str = JSON.stringify(quran);
+            var obj = JSON.parse(str);
+            
+
+            for (var verse in obj) {
+
+                if (obj[verse].id == sub) {
+                    var su = "";
+                    let elem = document.querySelector(".arabi");
+                    for (var ayat in obj[verse].verses) {
+
+                        su +=
+                            `
+                            
+                            <div class="arabi">
+
+                                <p><a href="">${obj[verse].verses[ayat].text} <span>${obj[verse].verses[ayat].id}</span></a></p>
+                            </div>
+                            <div class="translation">
+                                <div class="eng">
+                                    <div class="icon-div">
+                                        <a href="">${obj[verse].id} : ${obj[verse].verses[ayat].id}  </a><br>
+                                        <a href="audio.html"><i class="fa-solid fa-play"></i></a><br>
+                                        <a href=""><i class="fa-solid fa-book-open"></i></a> <br>
+                                        <a href=""><i class="fa-regular fa-comment"></i></a><br>
+                                        <a href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                        </div>
+                                        <div class="eng-trans">
+                                            <p>${obj[verse].verses[ayat].translation}</p>
+                                            
+                                            </div>
+                                            </div>
+
+                            </div>
+                            <hr>
+
+                       
+                         `
+                    }
+
+                    // break;
+                    elem.innerHTML = su;
+                }
+
+            }
+
+        }
+
+
+    </script>
+</head>
+
+<body onload="show()">
+    
+    <header>
+        <div class="title">
+            <h2><i id="headerBar" class="fa-solid fa-bars"></i><a href="index.html"> Al-Wahid</a></h2>
+        </div>
+        <div class="headicon">
+            <a href="index.html"><i class="fa-solid fa-home"></i></a>
+            <a href="audio.html"> <i class="fa-solid fa-circle-play"></i></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i id="dark-change" class="fa-solid fa-moon moonbhai"></i>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="history.html">history</a></li>
+            <li><a href="Quran.html">surah</a></li>
+            <li><a href="audio.html">audio</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">about us</a></li>
+        </ul>
+    </nav>
+
+    <div class="sideslider">
+        <button class="ham-btn" style="color: white;">
+            surah <i id="surahHam" class="fa-solid fa-bars"></i>
+        </button>
+        <div id="div" class="asideSurah">
+
+        </div>
+        
+    </div>
+
+    <div class="image-div">
+        <a href=""><img src="./img/Bismillah.png " alt="" class="image black">
+            <img src="./img/bismillah_white.png" alt="" class="  image white "></a>
+    </div>
+
+
+    <div class="translation1">
+        <div class="trans1">
+            <p>Translation by</p>
+            <span>Dr. Mustafa Khattab, the Clear Quran</span>
+            <!-- <a href="">(Change)</a> -->
+            <!-- <button id="urdu">Urdu</button> -->
+
+            <button id="urdubtn" >Change to urdu</button>
+            <button id="turkish" >Change to turkish</button>
+            <!-- <div id="script-container"></div> -->
+
+        </div>
+        <div class="trans2">
+            <p class="info"><a href=""><i class="fa-solid fa-circle-info"></i>Surah Info</a></p>
+            <p class="play"><a href="audio.html"><i class="fa-solid fa-play"></i>Play Audio</a></p>
+        </div>
+    </div>
+    <div class="translation">
+        <div class="eng">
+            <div class="icon-div">
+
+            </div>
+            <div class="eng-trans">
+
+            </div>
+        </div>
+        <div class="arabi">
+
+        </div>
+
+    </div>
+    <!-- <hr> -->
+
+    <footer>
+        <div class="foot">
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="span">
+            <a href="">Copyright 2023, All Rights Reserved</a>
+        </div>
+    </footer>
+
+    <script>
+
+  
+
+
+        const loadButton = document.getElementById("urdubtn");
+        const scriptContainer = document.querySelector(".arabi");
+        
+        function urdufunction() {
+            const script = document.createElement("script");
+            script.src = "urdu.js";
+            scriptContainer.appendChild(script);
+            show();   
+        }
+        urdubtn.addEventListener("click", urdufunction);
+
+
+        
+        function turkishLang() {    
+            const script = document.createElement("script");
+            script.src = "turkish.js";
+            scriptContainer.appendChild(script);
+            show();
+        }
+        
+        turkish.addEventListener("click", turkishLang);
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#headerBar").click(function () {
+                $(".menu").slideToggle();
+            });
+        })
+
+        var content = document.getElementsByTagName('body')[0];
+        console.log(content);
+
+        var darkmode = document.getElementById('dark-change');
+        console.log(darkmode);
+        let them = document.querySelector('.moonbhai');
+
+        darkmode.addEventListener('click', function () {
+
+            console.log(them);
+
+            // body.classList.toggle('body');
+            content.classList.toggle('night');
+            // darkmode.classlist.toggle('active');
+
+
+        })
+
+
+        darkmode.addEventListener("click", () => {
+
+            them.classList.toggle('moonactive');
+
+
+
+        })
+
+        $(document).ready(function () {
+            $('#surahHam').click(function () {
+                $('.asideSurah').css({
+                    "left": "0px",
+                    "transition": "all 0.8s ease"
+
+                })
+                    .toggle()
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Wahid/Shop</title>
+    <link rel="shortcut icon" href="./img/al_wahid-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="check.css">
+    <link rel="stylesheet" href="./icons/all.min.css">
+    <link rel="stylesheet" href="./icons/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body.night {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .fa-moon.moonactive {
+            color: rgb(5, 2, 2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h2><i class="fa-solid fa-bars"></i><a href="index.html"> Al-Wahid</a></h2>
+        </div>
+        <div class="headicon">
+            <a href="index.html"><i class="fa-solid fa-home"></i></a>
+            <a href="audio.html"> <i class="fa-solid fa-circle-play"></i></a>
+            <i id="dark-change" class="fa-solid fa-moon moonbhai"></i>
+            <span class="shopping">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="quantity">0</span>
+            </span>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="history.html">history</a></li>
+            <li><a href="Quran.html">surah</a></li>
+            <li><a href="audio.html">audio</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">about us</a></li>
+        </ul>
+    </nav>
+    <!-- shopping -->
+    <section id="shop">
+        <div class="vkcontainer">
+            <div class="vkheader">
+                <a href="">
+                    <h1>Our Shop</h1>
+                </a>
+            </div>
+            <div class="secrhformm">
+                <form action="" method="post" class="formm">
+                    <input type="text" name="" class="form-input" id="" placeholder="search products...">
+                </form>
+            </div>
+            <div class="imagecontainer">
+                <div class="box">
+                    <img src="" alt="">
+                    <p></p>
+                    <p></p>
+                    <button class="cartbtn"></button>
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <h1>Cart</h1>
+            <ul class="listCard">
+            </ul>
+            <button class="model-btn" onclick="popup()">proceed to check out</button>
+            <div class="checkOut">
+                <div class="total" id="blue">0</div>
+                <div class="closeShopping" id="clr">Close</div>
+            </div>
+        </div>
+        <div class="checkform">
+            <span onclick="closePopup()">&times;</span>
+            <form action="">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="">Full Name
+                                <input type="text">
+                            </label>
+                        </td>
+                        <td>
+                            <label for="">Address
+                                <input type="text"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Email
+                                <input type="text"></label>
+                        </td>
+                        <td>
+                            <label for="">Phone
+                                <input type="number">
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Country <br>
+                                <input type="text">
+                            </label>
+                        </td>
+                        <td>
+                            <label for="">Credit Card No #
+                                <input type="text">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Zip Code
+                                <input type="number">
+                            </label>
+                        </td>
+                        <td>
+                            <label for="">CVV
+                                <input type="number">
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <div class="submit-div">
+                    <input type="submit" value="Conform Order">
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- shopping end -->
+    <footer>
+        <div class="foot">
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="span">
+            <a href="">Copyright 2023, All Rights Reserved</a>
+
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="seach.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fa-bars").click(function () {
+                $(".menu").slideToggle();
+            });
+        })
+        var content = document.getElementsByTagName('body')[0];
+        var darkmode = document.getElementById('dark-change');
+        let them = document.querySelector('.moonbhai');
+        darkmode.addEventListener('click', function () {
+
+            console.log(them);
+            content.classList.toggle('night');
+        })
+
+        darkmode.addEventListener("click", () => {
+
+            them.classList.toggle('moonactive');
+
+        })
+        function popup() {
+            document.querySelector('.checkform').classList.add('showmodel');
+        }
+        function closePopup() {
+            document.querySelector('.checkform').classList.remove('showmodel');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Wahid/Audio</title>
+    <link rel="shortcut icon" href="./img/al_wahid-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./icons/all.min.css">
+    <link rel="stylesheet" href="./icons/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <style>
+        body.night {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .fa-moon.moonactive {
+            color: rgb(5, 2, 2);
+        }
+
+        .search {
+            width: 90%;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .audio-sec {
+            padding: 10px 5%;
+            margin-bottom: 100px;
+        }
+
+        .audio-sec .surahs {
+            box-shadow: rgba(31, 4, 230, 0.2) 0px 2px 8px 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+            transition: all .3s ease-in;
+            cursor: pointer;
+            border: 1px solid white;
+
+        }
+
+        .audio-sec .audio-flex {
+            position: relative;
+        }
+
+        .Siconss {
+            position: absolute;
+            top: 20px;
+            right: -250px;
+        }
+
+        .Siconss i {
+            padding: 0px 10px;
+        }
+
+        @media (max-width:1118px) {
+            .Siconss {
+                position: absolute;
+                top: 20px;
+                right: -220px;
+            }
+
+        }
+
+        @media (max-width:992px) {
+            .Siconss {
+                position: absolute;
+                top: 20px;
+                right: -180px;
+            }
+
+        }
+
+        @media (max-width:800px) {
+            .Siconss {
+                position: absolute;
+                top: 20px;
+                right: -150px;
+            }
+
+        }
+
+        @media (max-width:680px) {
+            .Siconss {
+                position: absolute;
+                top: 20px;
+                right: -120px;
+            }
+
+        }
+
+        @media (max-width:620px) {
+            .audio-sec .surahs {
+
+                grid-template-columns: 1fr;
+            }
+
+            .Siconss {
+                position: absolute;
+                top: 20px;
+                right: 0px;
+
+            }
+        }
+
+
+        .player {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .buttons .icon {
+            margin: 0px 30px;
+        }
+
+        .player .quranPlayer {
+            text-align: center;
+            width: 100%;
+        }
+
+        .player #title {
+            text-align: center;
+            font-size: 25px;
+            width: 30%;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0 auto;
+            background-color: rgb(203, 204, 206);
+        }
+
+        .night .player #title {
+            background-color: #000;
+            color: white;
+        }
+
+        .night .buttons .icon {
+            color: #fff;
+        }
+
+        .buttons .icon {
+            font-size: 25px;
+
+            color: rgb(1, 14, 13);
+        }
+
+        .fa-circle-play {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="title">
+
+            <h2><i class="fa-solid fa-bars"></i><a href="index.html"> Al-Wahid</a></h2>
+        </div>
+        <div class="headicon">
+            <a href="index.html"><i class="fa-solid fa-home"></i></a>
+            <a href="audio.html"> <i class="fa-solid fa-circle-play"></i></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i id="dark-change" class="fa-solid fa-moon moonbhai"></i>
+    
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+
+            <li><a href="index.html">home</a></li>
+            <li><a href="history.html">history</a></li>
+            <li><a href="Quran.html">surah</a></li>
+            <li><a href="audio.html">audio</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">about us</a></li>
+
+        </ul>
+    </nav>
+
+    <section class="audio-sec">
+
+        <div class="surahs">
+        </div>
+    </section>
+
+    <div class="player">
+        <div id="title">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+        <audio src="" class="quranPlayer" controls autoplay></audio>
+        <div class="buttons">
+            <div class="icon previous"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="icon next"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="span">
+            <a href="">Copyright 2023, All Rights Reserved</a>
+        </div>
+    </footer>
+
+
+    <script src="js/audio.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".fa-bars").click(function () {
+                $(".menu").slideToggle();
+            });
+        })
+
+
+
+        var content = document.getElementsByTagName('body')[0];
+        console.log(content);
+
+        var darkmode = document.getElementById('dark-change');
+        console.log(darkmode);
+        let them = document.querySelector('.moonbhai');
+
+        darkmode.addEventListener('click', function () {
+
+            console.log(them);
+
+            // body.classList.toggle('body');
+            content.classList.toggle('night');
+            // darkmode.classlist.toggle('active');
+
+
+        })
+
+
+        darkmode.addEventListener("click", () => {
+
+            them.classList.toggle('moonactive');
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>

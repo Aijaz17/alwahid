@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Wahid/About us</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="shortcut icon" href="./img/al_wahid-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./icons/all.min.css">
+    <link rel="stylesheet" href="./icons/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        body.night {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .fa-moon.moonactive {
+            color: rgb(5, 2, 2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+
+            <h2><i class="fa-solid fa-bars"></i><a href="index.html"> Al-Wahid</a></h2>
+        </div>
+        <div class="headicon">
+            <a href="index.html"><i class="fa-solid fa-home"></i></a>
+            <a href="audio.html"> <i class="fa-solid fa-circle-play"></i></a>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i id="dark-change" class="fa-solid fa-moon moonbhai"></i>
+
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+
+            <li><a href="index.html">home</a></li>
+            <li><a href="history.html">history</a></li>
+            <li><a href="Quran.html">surah</a></li>
+            <li><a href="audio.html">audio</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">about us</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="about-hero">
+        <div class="about-div">
+            <a href="">
+                <h1>About Us</h1>
+            </a>
+            <a href="index.html"> <span>Home /</span> </a>
+            <a href=""> <span class="about-clr">About Us</span></a>
+        </div>
+    </section>
+
+    <sectin class="sec2">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>Our website's objective is that; Anyone can read, research, and learn the Quran with the help of this
+                website. The core team members worked together to create the open source project.</p>
+            <br>
+            <p>You could think of Al-Wahid as the search engine of Islam. All the necessary information and more has
+                been included on the website so that everyone can learn about the faith. Al-Wahid is a one-stop shop for
+                anyone who wants to learn more about Islam; it offers everything from the Holy Quran, Surah, Ayas,
+                Translation, and more.</p>
+        </div>
+        <div class="about-img">
+            <a href=""><img src="./img/resite.png" alt=""></a>
+        </div>
+    </sectin>
+    <section class="sec3">
+
+        <div class="audio-sec3">
+
+            <h1>Our Story In a Nutshell</h1>
+            <div class="abouticon-div">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p>Al-Wahid originated from the need for a one-stop solution for Islam knowledge in a highly digitized world
+                where people need quick access to information. Apart from fulfilling this gap in the market, Al-Wahid
+                was
+                created to benefit all those looking to learn about the religion and the infinite wisdom it offers.
+            </p>
+            <div class="abouticon-div2">
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sec4">
+        <h1 class="team">Our Team</h1>
+        <div class="ak-div">
+
+            <div class="text">
+                <img src="./img/ak.jpg" alt="">
+                <h1>Anosha Khan</h1>
+                <h5>Frontend Developer</h5>
+            </div>
+
+
+            <div class="text">
+                <img src="./img/vk.jpg" alt="">
+                <h1>Vaniya Khan</h1>
+                <h5>JavaScript Expert</h5>
+            </div>
+
+            <div class="text">
+                <img src="./img/wk.jpg" alt="">
+                <h1>Warisha Khan</h1>
+                <h5>Frontend Developer</h5>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot">
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="span">
+            <a href="">Copyright 2023, All Rights Reserved</a>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $(".fa-bars").click(function () {
+                $(".menu").slideToggle();
+            });
+        })
+
+
+
+        var content = document.getElementsByTagName('body')[0];
+        console.log(content);
+
+        var darkmode = document.getElementById('dark-change');
+        console.log(darkmode);
+        let them = document.querySelector('.moonbhai');
+
+        darkmode.addEventListener('click', function () {
+
+            console.log(them);
+
+            // body.classList.toggle('body');
+            content.classList.toggle('night');
+            // darkmode.classlist.toggle('active');
+
+
+        })
+
+
+        darkmode.addEventListener("click", () => {
+
+            them.classList.toggle('moonactive');
+
+
+
+        })
+
+    </script>
+
+
+
+
+</body>
+
+</html>
