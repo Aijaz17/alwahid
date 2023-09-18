@@ -34,6 +34,7 @@ let form = document.querySelector(".formm");
 let srchinput = document.querySelector(".form-input");
 
 form.addEventListener("keyup", () => {
+    
 
     let srchval = srchinput.value;
 

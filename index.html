@@ -15,25 +15,44 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <!-- Link Swiper's CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
     <!-- Swiper JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <style>
-        body.night {
+        /* body.night {
             background-color: #000;
             color: #fff;
         }
 
         .fa-moon.moonactive {
             color: rgb(5, 2, 2);
-        }
-    </style>
+        } */
 
+        body {
+    background-color: white;
+    color: black;
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+
+
+    </style>
 
 </head>
 
 <body>
+
+        <!-- <button id="themeButton">Change Theme</button> -->
+    <!-- <script src="theme.js"></script> -->
     <header>
         <div class="title">
 
@@ -43,7 +62,7 @@
             <a href="index.html"><i class="fa-solid fa-home"></i></a>
             <a href="audio.html"> <i class="fa-solid fa-circle-play"></i></a>
             <i class="fa-solid fa-cart-shopping"></i>
-            <i id="dark-change" class="fa-solid fa-moon moonbhai"></i>
+            <i id="themeButton" class="fa-solid fa-moon moonbhai"></i>
 
         </div>
     </header>
@@ -143,6 +162,7 @@
     <!-- ............. end........... -->
 
     <!-- ............. produts start........... -->
+    
     <a href="shop.html">
         <h1 class="name">our shop</h1>
     </a>
@@ -223,6 +243,9 @@
 
 
 
+    <script src="theme.js"></script>
+
+
     <script>
         $(document).ready(function () {
             $(".fa-bars").click(function () {
@@ -230,34 +253,33 @@
             });
         })
 
+        
+
+        // var content = document.getElementsByTagName('body')[0];
+        // console.log(content);
+
+        // var darkmode = document.getElementById('dark-change');
+        // console.log(darkmode);
+        // let them = document.querySelector('.moonbhai');
+
+        // darkmode.addEventListener('click', function () {
 
 
-        var content = document.getElementsByTagName('body')[0];
-        console.log(content);
+        //     console.log(them);
 
-        var darkmode = document.getElementById('dark-change');
-        console.log(darkmode);
-        let them = document.querySelector('.moonbhai');
-
-        darkmode.addEventListener('click', function () {
-
-            console.log(them);
-
-            // body.classList.toggle('body');
-            content.classList.toggle('night');
-            // darkmode.classlist.toggle('active');
-
-
-        })
-
-
-        darkmode.addEventListener("click", () => {
-
-            them.classList.toggle('moonactive');
+        //     // body.classList.toggle('body');
+        //     content.classList.toggle('night');
+        //     // darkmode.classlist.toggle('active');
+        
+        // })
 
 
 
-        })
+        // darkmode.addEventListener("click", () => {
+
+        //     them.classList.toggle('moonactive');
+
+        // })
 
     </script>
     <!-- Initialize Swiper -->

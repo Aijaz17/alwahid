@@ -64,7 +64,7 @@ table {
     background-color: rgba(14, 86, 78, 0.862);
     width: 30%;
     padding: 30px;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: -60%;
     transform: translate(-50%, -50%);

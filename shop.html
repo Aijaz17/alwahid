@@ -170,17 +170,21 @@
         var content = document.getElementsByTagName('body')[0];
         var darkmode = document.getElementById('dark-change');
         let them = document.querySelector('.moonbhai');
+        
         darkmode.addEventListener('click', function () {
 
             console.log(them);
             content.classList.toggle('night');
+        
         })
 
-        darkmode.addEventListener("click", () => {
+        darkmode.addEventListener("onmouseover", () => {
 
             them.classList.toggle('moonactive');
 
         })
+
+
         function popup() {
             document.querySelector('.checkform').classList.add('showmodel');
         }

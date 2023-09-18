@@ -18,7 +18,7 @@
 
 
 
-    <script id="dynamicScript" src="data.js"></script>
+    <script id="changeScript" src="data.js"></script>
     <script>
         function loaddata() {
             var quran = data;
@@ -49,6 +49,7 @@
     </style>
     <!-- <script id="dynamicScript" src="data.js"></script> -->
     <script>
+
         function show() {
 
             var url = window.location.href;
@@ -58,7 +59,7 @@
             var quran = data;
             var str = JSON.stringify(quran);
             var obj = JSON.parse(str);
-            
+
 
             for (var verse in obj) {
 
@@ -69,7 +70,7 @@
 
                         su +=
                             `
-                            
+
                             <div class="arabi">
 
                                 <p><a href="">${obj[verse].verses[ayat].text} <span>${obj[verse].verses[ayat].id}</span></a></p>
@@ -91,10 +92,10 @@
 
                             </div>
                             <hr>
-
-                       
-                         `
+                            
+                            `
                     }
+
 
                     // break;
                     elem.innerHTML = su;
@@ -105,11 +106,16 @@
         }
 
 
+
+
+
+
+
     </script>
 </head>
 
-<body onload="show()">
-    
+<body>
+
     <header>
         <div class="title">
             <h2><i id="headerBar" class="fa-solid fa-bars"></i><a href="index.html"> Al-Wahid</a></h2>
@@ -139,7 +145,7 @@
         <div id="div" class="asideSurah">
 
         </div>
-        
+
     </div>
 
     <div class="image-div">
@@ -155,8 +161,8 @@
             <!-- <a href="">(Change)</a> -->
             <!-- <button id="urdu">Urdu</button> -->
 
-            <button id="urdubtn" >Change to urdu</button>
-            <button id="turkish" >Change to turkish</button>
+            <button id="urdubtn" onclick="ChangeUrdu()">Change to urdu</button>
+            <button id="turkish">Change to turkish</button>
             <!-- <div id="script-container"></div> -->
 
         </div>
@@ -195,40 +201,60 @@
 
     <script>
 
-  
+
 
 
         const loadButton = document.getElementById("urdubtn");
         const scriptContainer = document.querySelector(".arabi");
         
-        function urdufunction() {
-            const script = document.createElement("script");
-            script.src = "urdu.js";
-            scriptContainer.appendChild(script);
-            show();   
-        }
-        urdubtn.addEventListener("click", urdufunction);
+        // function urdufunction() {
 
+        //     const script = document.createElement("script");
+        //     script.src = "urdu.js";
+        //     scriptContainer.appendChild(script);
 
+        //     // alert("hello");
+        // }
         
-        function turkishLang() {    
+
+        loadButton.onclick = () => {
+
+            urdufunction();
+            show();
+
+        };
+
+
+
+        function turkishLang() {
+            
             const script = document.createElement("script");
             script.src = "turkish.js";
             scriptContainer.appendChild(script);
+
             show();
+
+
         }
-        
+
         turkish.addEventListener("click", turkishLang);
 
 
 
-    </script>
 
-    <script>
         $(document).ready(function () {
             $("#headerBar").click(function () {
                 $(".menu").slideToggle();
             });
+
+
+            $('#surahHam').click(function () {
+                $('.asideSurah').css({
+                    "left": "0px",
+                })
+
+            })
+
         })
 
         var content = document.getElementsByTagName('body')[0];
@@ -258,16 +284,13 @@
 
         })
 
-        $(document).ready(function () {
-            $('#surahHam').click(function () {
-                $('.asideSurah').css({
-                    "left": "0px",
-                    "transition": "all 0.8s ease"
 
-                })
-                    .toggle()
-            })
-        })
+
+        document.addEventListener("DOMContentLoaded", show);
+
+        document.addEventListener("DOMContentLoaded", loaddata);
+
+
     </script>
 </body>
 
